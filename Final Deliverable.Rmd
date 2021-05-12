@@ -47,15 +47,15 @@ df_clean[, Compliance := ifelse((df_clean[, Treatment]==1 & Group=='CP'), 1, 0)]
 
 # Introduction
 
-## Research Question
-
-Our objective of this experiment is to study the effect of memory on survey participants who type in information, viz-a-viz those who copy and paste information. In this experiment, we study the effect of copying and pasting (treatment group) versus typing (control group) on memory. 
-
 ## Background
 
 Many experiments have tested the effects of typing versus handwriting on memory and comprehension. Smoker, Murphy, and Rockwell (2009) showed that participants had better recognition and recall of words when asked to write them versus typing them. Many of these studies postulate that the improved performance in memory is due to increased semantic processing from handwriting. Mueller and Oppenheimer (2014) demonstrated that students who took notes by hand performed better on conceptual questions than students who took notes on a laptop. The authors noted that laptop note takers were more likely to copy notes word-for-word, indicating that they were not processing and truly understanding the information as well as longhand note takers.
 
-Given this background research, we expect that copy-pasting would result in even less semantic processing than typing, and that our participants asked to copy-paste information would have worse memory than the typing participants.
+## Research Question
+
+Our objective of this experiment is to study the effect of memory on survey participants who type in information, viz-a-viz those who copy and paste information. In this experiment, we study the effect of copying and pasting (treatment group) versus typing (control group) on memory. 
+
+Given the background research, we expect that copy-pasting would result in even less semantic processing than typing, and that our participants asked to copy-paste information would have worse memory than the typing participants.
 
 
 # Hypothesis
@@ -85,7 +85,7 @@ The purpose of a pilot survey is to test the correctness of the instructions, ex
 
 ## Survey Participants
 
-For experiment participants, we gathered survey responses from 3 main sources, our MSBA classmates, Reddit forums, and Facebook groups. Our criteria for choosing these three channels were based on size, convenience, experiment stage, and diversity. We aimed for a control (T) vs treatment (C&P) split of 50%; however, we achieved a split of 59.6% control to 40.4% treatment. In total, 140 survey respondents fully completed the survey. The survey demographic breakdown is as follows:
+For experiment participants, we gathered survey responses from 3 main sources, our MSBA classmates, Reddit forums, and Facebook groups. Our criteria for choosing these three channels were based on size, convenience, experiment stage, and diversity. We aimed for a control (T) vs treatment (C&P) split of 50%; however, we achieved a split of 57.9% control to 42.1% treatment. In total, 140 survey respondents fully completed the survey. 81 were in the control group and 59 were in the treatment group. The survey demographic breakdown is as follows:
 
 * English as first language - Yes (56.6%), No (44.4%)
 * Gender - Men (35.2%), Women (59.2%), Non-Binary (3.5%), Perfer not to say (1.4%), Other (0.7%)
@@ -124,7 +124,7 @@ Numeric_Questions = feols(Num_Accuracy ~ Treatment, data = df_clean, se = 'white
 ITT_summary <- etable(All_Questions, Text_Questions, Numeric_Questions)
 ITT_summary[1:5,]
 ```
-The power of our experiment is 0.98. For the average treatment effect (ATE), we saw that the treatment (C&P) group scored 19.08% lower than the participants placed in the control (T) group. When we examined the ATE by question type, we saw that our treatment (C&P) group scored 25.09% lower than the control (T) group on textual questions whereas on numerical questions, the treatment (C&P) group only scored 13.08% lower than the control (T) group. It is worth noting that the ATE for numerical questions was not statistically significant.
+To calculate the average treatment effect (ATE), we ran regressions of accuracy scores (range from 0% to 100%) on the treatment. We saw that on average, the treatment (C&P) group scored 19.08% lower than the participants placed in the control (T) group. When we examined the ATE by question type, we saw that our treatment (C&P) group scored 25.09% lower than the control (T) group on textual questions whereas on numerical questions, the treatment (C&P) group only scored 13.08% lower than the control (T) group. It is worth noting that the ATE for numerical questions was not statistically significant.
 
 
 ## Complier Average Causal Effect
@@ -137,7 +137,7 @@ cace_summary <- etable(CACE_AllQuestions, CACE_TextQuestions, CACE_NumQuestions)
 cace_summary[1:5,]
 ```
 
-For our Complier Average Causal Effects (CACE), we concluded that participants who copy-pasted the information scored 20.5% less than the participants who were forced to type. The accuracy of the treated (C&P) participants for textual questions were 26.91% lower than the people who were in the control (T) group, while for the numerical questions the treatment group scored 14.03% lower. Also, the CACE for numerical questions was not significant at a significance level of 0.01.
+The compliance rate in our experiment is 93.2%. For the Complier Average Causal Effects (CACE), we concluded that participants who copy-pasted the information scored 20.5% less than the participants who were forced to type. The accuracy of the treated (C&P) participants for textual questions were 26.91% lower than the people who were in the control (T) group, while for the numerical questions the treatment group scored 14.03% lower. The CACE for numerical questions was not significant at a significance level of 0.01.
 
 ## Heterogeneous Treatment Effect
 
