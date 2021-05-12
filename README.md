@@ -6,6 +6,6 @@
 ### Project Objective
 
 
-### Data Source
+### Data Collection
 
 *By Yigit Demiralp, Jeffrey Leung, John McCoy, Chiebuka Onwuzurike, Ruchika Venkateswaran, Phoenix Wang*
