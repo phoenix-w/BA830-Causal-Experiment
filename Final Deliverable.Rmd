@@ -2,7 +2,7 @@
 title: "Methods of Transcriptions and Their Effects on Memory"
 author: 
 - Yigit Demiralp, Jeffrey Leung, John McCoy, Chiebuka Onwuzurike, 
-- Ruchika Venkateswaran, Yi-shuan Wang
+- Ruchika Venkateswaran, Phoenix Wang
 output:
   pdf_document: default
   html_document: default
