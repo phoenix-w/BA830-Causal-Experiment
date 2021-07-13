@@ -1,4 +1,4 @@
-# BA830-Causal-Experiment
+## Methods of Transcriptions and Their Effects on Memory
 
 ### Project Objective
 The objective of this experiment is to study the effect of different transcriptions methods on memory. We hypothesized that copy-pasting would result in even less semantic processing than typing, and that participants who copy and paste information are less likely than participants who type information to remember what they have learned. 
